@@ -72,5 +72,24 @@ IUsersService -> DI Container -> UsersService
 
 > DI Container is a.k.a. IoC Container (Inversion of Control)
 
+## EXTRAS
+
+### Decorators
+
+- an experimental TS feature that allows us to annotate classes, methods and properties in order to extend their functionality without the need to subclass them
+- have to be enabled in `tsconfig.json`;
+```JSON
+"experimentalDecorators": true,
+"emitDecoratorMetadata": true,
+```
+- They can be applied to:
+    - class
+    - method
+    - property
+    - accessors
+
+> :warning: Implementation might change in the future
+
+- The Factory (for decorators) runs only once, which means it only has one chance to return the decorator. The decorator itself runs every time you invoke the method. If you set up a `hook` and you call `bar` multiple times, the `hook` will run multiple times, however, the decorator factory that binds `hook` to the `bar` method only runs once
 
 > [BACK TO MENU](../README.md)
