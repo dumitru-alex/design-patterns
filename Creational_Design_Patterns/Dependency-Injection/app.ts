@@ -1,4 +1,4 @@
-import { DIContainer } from './di-container';
+import { DIContainer, Register } from './di-container';
 
 interface IDepA {
     doA(): void;
@@ -12,18 +12,21 @@ interface IDepC {
     doC(): void;
 }
 
+@Register("IDepA", [])
 class ConcreteA implements IDepA {
     doA(): void {
         console.log("Doing A");
     }
 }
 
+@Register("IDepB", [])
 class ConcreteB implements IDepB {
     doB(): void {
         console.log("Doing B");
     }
 }
 
+@Register("IDepC", ["IDepA", "IDepB"])
 class ConcreteC implements IDepC {
     constructor (private _concreteA: IDepA, private _concreteB: IDepB) {}
 
@@ -36,9 +39,10 @@ class ConcreteC implements IDepC {
 
 let container = DIContainer.instance;
 
-container.register("IDepA", [], ConcreteA);
-container.register("IDepB", [], ConcreteB);
-container.register("IDepC", ["IDepA", "IDepB"], ConcreteC);
+// Initial way to register - Moved to a decorator
+// container.register("IDepA", [], ConcreteA);
+// container.register("IDepB", [], ConcreteB);
+// container.register("IDepC", ["IDepA", "IDepB"], ConcreteC);
 
 // let a = container.resolve<IDepA>("IDepA");
 // a.doA();
