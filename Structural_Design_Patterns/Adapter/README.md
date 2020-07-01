@@ -1,0 +1,2 @@
+- converts an interface of a class to one expected by the consumer
+- we use it when we want to consume a class that implements an interface that is different, or varies slightly than the one that our client class is expecting
