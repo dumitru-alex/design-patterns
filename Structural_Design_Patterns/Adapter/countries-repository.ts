@@ -1,16 +1,17 @@
-import { Country } from "./Structural_Design_Patterns/Adapter/country";
+import { Country } from "./country";
 import * as fs from 'fs';
 import { rejects } from "assert";
+import { ICountriesRepository } from "./Icountries-repository";
 
 export enum Continent {
     Africa = "Africa",
     Asia = "Asia",
     Europe = "Europe",
-    NorthAmerica = "NorthAmerica",
-    SouthAmerica = "SouthAmerica",
+    NorthAmerica = "North America",
+    SouthAmerica = "South America",
     Oceania = "Oceania"
 }
-export class CountriesRepository {
+export class CountriesRepository implements ICountriesRepository{
     async all(): Promise<Country[]> {
         return Promise.all([Continent.Africa, Continent.Asia, Continent.Europe, Continent.NorthAmerica, Continent.SouthAmerica]
             .map(continent => this.allByContinent(continent))).then(results => {

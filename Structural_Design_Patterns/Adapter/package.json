@@ -1,0 +1,15 @@
+{
+  "name": "Adapter",
+  "version": "1.0.0",
+  "description": "- converts an interface of a class to one expected by the consumer\r - we use it when we want to consume a class that implements an interface that is different, or varies slightly than the one that our client class is expecting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
