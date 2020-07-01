@@ -92,4 +92,27 @@ IUsersService -> DI Container -> UsersService
 
 - The Factory (for decorators) runs only once, which means it only has one chance to return the decorator. The decorator itself runs every time you invoke the method. If you set up a `hook` and you call `bar` multiple times, the `hook` will run multiple times, however, the decorator factory that binds `hook` to the `bar` method only runs once
 
+
+### InversifyJS
+
+- [website](https://inversify.io)
+
+- setup in `config.json` (on top of `tsc --init`)
+    ```JSON
+    {
+        "lib": ["es6"],
+        "types": ["reflect-metadata", "node"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+    }
+    ```
+
+### Dependency scopes 
+- singleton
+- transient
+- request
+
+Done in `inversify.config.ts`
+
+
 > [BACK TO MENU](../README.md)
