@@ -1,0 +1,3 @@
+- the goal of the Facade is to simplify a complex interface
+- the Facade pattern is an application of the Principle of Least Interest (a.k.a. Demeter's Law)
+- this means that every component should have little to no knowledge of how other components work and only communicate with a selected few, so called friends
