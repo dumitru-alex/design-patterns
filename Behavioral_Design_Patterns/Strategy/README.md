@@ -1,0 +1,1 @@
+- primary advantage is allowing the ability to pick an algorithm from a group of similar algorithms, at runtime
